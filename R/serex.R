@@ -27,7 +27,7 @@
 
 library(xlsx)
 
-setwd(".")
+setwd("R")
 source(file.path('misc','setStyles.R'))
 source(file.path('misc','set_general.R'))
 
@@ -46,7 +46,7 @@ createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
 
     sheet <- createSheet(wb, sheetName = sheet.name)
     xlsx.background(sheet, styles[['background']])
-    addPicture('resources/SE_logo.png', sheet, startRow=2, startColumn=2 )
+    addPicture('../resources/SE_logo.png', sheet, startRow=2, startColumn=2 )
     xlsx.addTitle(sheet, 9, 2, sheetlist[[sheet.name]], styles[['title']] )
     sheets[[sheet.name]]= sheet
   }
