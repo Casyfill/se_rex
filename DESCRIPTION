@@ -1,11 +1,13 @@
 Package: serex
 Title: StreetEasy-styled wrapper around xlsx package
-Version: 0.0.0.9001
+Version: 0.0.0.9003
 Authors@R: person("Philipp", "Kats", email = "philippk@zillowgroup.com", role = c("aut", "cre"))
 Description: A simple and rudimentary wrapper around xlsx: writes SE_style excel
     tables with all formatting, logo, etc.
 Depends:
     R (>= 3.2.1)
+Imports:
+    xlsx
 License: Not for public use
 Encoding: UTF-8
 LazyData: false

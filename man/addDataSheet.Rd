@@ -2,7 +2,7 @@
 % Please edit documentation in R/serex.R
 \name{addDataSheet}
 \alias{addDataSheet}
-\title{writes a dataframe to the chosen sheet, 
+\title{writes a dataframe to the chosen sheet,
 format it as a "datasheet"}
 \usage{
 addDataSheet(df, name = "DataSheet", sheet, startRow = 12, startCol = 2,
@@ -25,7 +25,7 @@ addDataSheet(df, name = "DataSheet", sheet, startRow = 12, startCol = 2,
 nothing
 }
 \description{
-writes a dataframe to the chosen sheet, 
+writes a dataframe to the chosen sheet,
 format it as a "datasheet"
 }
 
