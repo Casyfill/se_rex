@@ -5,15 +5,23 @@ borderStyles <- function(wb){
   #' and 4 border cornet styles
   #' + shadow style
   
-  top <- CellStyle(wb) + Border(color="black", position="TOP", pen="BORDER_THICK");
-  bottom <- CellStyle(wb) + Border(color="black", position="BOTTOM", pen="BORDER_THICK");
-  left <- CellStyle(wb) + Border(color="black", position="LEFT", pen="BORDER_THICK");
-  right <- CellStyle(wb) + Border(color="black", position="RIGHT", pen="BORDER_THICK");
+  top <- CellStyle(wb) + Border(color="black", position="TOP", pen="BORDER_THICK") +
+         Fill(foregroundColor='white');
+  bottom <- CellStyle(wb) + Border(color="black", position="BOTTOM", pen="BORDER_THICK") +
+         Fill(foregroundColor='white');
+  left <- CellStyle(wb) + Border(color="black", position="LEFT", pen="BORDER_THICK") +
+         Fill(foregroundColor='white');
+  right <- CellStyle(wb) + Border(color="black", position="RIGHT", pen="BORDER_THICK") +
+         Fill(foregroundColor='white');
   
-  ul_corner <-  CellStyle(wb) + Border(color="black", position=c("TOP", 'LEFT'), pen="BORDER_THICK");
-  ur_corner <-  CellStyle(wb) + Border(color="black", position=c("TOP", 'RIGHT'), pen="BORDER_THICK");
-  bl_corner <- CellStyle(wb) + Border(color="black", position=c("BOTTOM", 'LEFT'), pen="BORDER_THICK");
-  br_corner <- CellStyle(wb) + Border(color="black", position=c("BOTTOM", 'RIGHT'), pen="BORDER_THICK");
+  ul_corner <-  CellStyle(wb) + Border(color="black", position=c("TOP", 'LEFT'), pen="BORDER_THICK") +
+                Fill(foregroundColor='white');
+  ur_corner <-  CellStyle(wb) + Border(color="black", position=c("TOP", 'RIGHT'), pen="BORDER_THICK") +
+                Fill(foregroundColor='white');
+  bl_corner <- CellStyle(wb) + Border(color="black", position=c("BOTTOM", 'LEFT'), pen="BORDER_THICK") +
+                Fill(foregroundColor='white');
+  br_corner <- CellStyle(wb) + Border(color="black", position=c("BOTTOM", 'RIGHT'), pen="BORDER_THICK")  +
+               Fill(foregroundColor='white');
   
   shadow <-   CellStyle(wb) + Fill(foregroundColor='#969696');
   
@@ -47,12 +55,14 @@ setStyles <- function(wb){
   Header_Style <- CellStyle(wb) + Font(wb, heightInPoints=14, 
                                        name=font_name) +
                   Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
-                  Border(color="black", position="BOTTOM", pen="BORDER_THICK");
+                  Border(color="black", position="BOTTOM", pen="BORDER_THIN") +
+                  Fill(foregroundColor='white');
   
-  
+
   
   odd_row <-  CellStyle(wb) + Font(wb, heightInPoints=14, name = font_name) +
-                            Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT");
+              Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
+              Fill(foregroundColor='white');
   
   
   
@@ -64,17 +74,20 @@ setStyles <- function(wb){
                                       name = font_name) +
                                Fill(foregroundColor='#f4f4f4');
   
-  borders <- borderStyles(wb)  
+  borders <- borderStyles(wb)
+  
+
   
   return(
         list(title=Title_Style,
               background = Background,
-              borders <- borders,
+              borders = borders,
               table = list(
                           header=Header_Style,
                           even_row=even_row,
                           odd_row=odd_row
                           )
+             
               )
          )
 }
