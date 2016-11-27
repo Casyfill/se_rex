@@ -27,7 +27,7 @@
 
 library(xlsx)
 
-setwd("R")
+setwd("./R")
 source(file.path('misc','setStyles.R'))
 source(file.path('misc','set_general.R'))
 
@@ -37,6 +37,7 @@ createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
   #' NOTE: maybe should return wb only, then get sheets through getSheets()
   #' @param sheets: named list, list(SheetName='Sheet title')
   #' @return named list of WB (workbook) and Sheets (named list of sheets)
+  #' @export
 
   wb<<-createWorkbook(type="xlsx")
   styles <<- setStyles(wb)
@@ -54,13 +55,6 @@ createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
   return(sheets)
 }
 
-saveSE <-function(wb, path){
-  #' store SE workbook as an excel file 
-  #' @param wb: workbook object to save
-  #' @param path: string, path to the file
-  saveWorkbook(wb, path)
-}
-    
 
 addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, topspace=3){
   #' writes a dataframe to the chosen sheet, 
@@ -72,6 +66,7 @@ addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, t
   #' @param startCol: int, column for the upper left corner of the datasheet
   #' @param topspace: int, space between the top edge of the sheet and the header of the table
   #' @return nothing
+  #' @export
   
   
   dfshape <- c(nrow(df)+2+topspace, ncol(df)+1) # infer size of the sheet
@@ -98,6 +93,15 @@ addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, t
   
 }
 
+
+
+saveSE <-function(wb, path){
+  #' store SE workbook as an excel file 
+  #' @param wb: workbook object to save
+  #' @param path: string, path to the file
+  #' @export
+  saveWorkbook(wb, path)
+}
 
 
 
