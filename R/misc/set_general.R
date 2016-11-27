@@ -100,32 +100,3 @@ xlsx.sheetborder <- function(sheet, width, height, rowStart, colStart){
  
 }
 
-
-addDataSheet <- function(df, sheet, startRow=12, startCol=2, topspace=3, name='DataSheet'){
-  #' stores dataframe as a "sheet" within the excel sheet
-  #' 
-  
-  dfshape <- c(nrow(df)+2+topspace, ncol(df)+1) # infer size of the sheet
-  
-  # add dataframe
-  addDataFrame(x=df, sheet=sheet, startRow=(startRow+1+topspace), 
-                startCol=(startCol+1), showNA=T, row.names = F,
-                characterNA="NA", colStyle = list( 2=styles[['table']][['odd_row']],
-                                                  'speed'=styles[['table']][['even_row']]),
-                colnamesStyle=styles[['table']][['header']])
-  
-  # add sheet borders
-  xlsx.sheetborder(sheet=sheet, width=dfshape[2], height=dfshape[1], rowStart=startRow, colStart=startCol)
-  
-  wrap_blank <- function(cell){
-    mydummy <- setCellStyle(cell, styles[['table']][['odd_row']])
-  }
-  
-  rows <-getRows(sheet, rowIndex=(startRow+1):(startRow+topspace) )
-  cells <-getCells(rows, colIndex=(startCol+1):(startCol+dfshape[2]-1))
-  mydummy <- lapply(cells, wrap_blank)
-  
-  cell <-getCells(getRows(sheet,rowIndex=(startRow+1)), colIndex=(startCol+1))
-  mydummy <-setCellValue(cell[[1]],name)
-  
-}
