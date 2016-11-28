@@ -11,7 +11,7 @@ createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
   wb<<-createWorkbook(type="xlsx")
   styles <<- setStyles(wb)
 
-  logo_path <-  system.file('SE_logo.png', package="serex")
+  logo_path <-  system.file(file.path('data', 'SE_logo.png'), package="serex")
   sheets = list()
   for(sheet.name in names(sheetlist)){
 
