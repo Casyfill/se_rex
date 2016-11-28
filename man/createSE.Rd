@@ -2,6 +2,8 @@
 % Please edit documentation in R/createSE.R
 \name{createSE}
 \alias{createSE}
+\title{Main workbook creator
+NOTE: maybe should return wb only, then get sheets through getSheets()'}
 \usage{
 createSE(sheetlist = list(SUMMARY = "Neighborhood inventory"))
 }
@@ -15,6 +17,6 @@ sheets: named list of registered sheets
 }
 \description{
 creates new workbook, registers styles
-and adds given sheets NOTE: maybe should return wb only, then get sheets through getSheets()'
+and adds given sheets
 }
 
