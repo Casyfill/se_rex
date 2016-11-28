@@ -31,11 +31,11 @@ setStyles <- function(wb){
 
 
 
-  even_row <- xslx::CellStyle(wb) + xslx::Font(wb,  xslx::heightInPoints=14, name = font_name) +
+  even_row <- xslx::CellStyle(wb) + xslx::Font(wb,  heightInPoints=14, name = font_name) +
     xslx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
     xslx::Fill(foregroundColor='#f4f4f4');
 
-  Title_Style <- xslx::CellStyle(wb) + xslx::Font(wb,  xslx::heightInPoints=18,
+  Title_Style <- xslx::CellStyle(wb) + xslx::Font(wb,  heightInPoints=18,
                                       name = font_name) +
     xslx::Fill(foregroundColor='#f4f4f4');
 

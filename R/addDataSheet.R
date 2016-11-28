@@ -8,7 +8,7 @@
 #' @param topspace: int, space between the top edge of the sheet and the header of the table
 #' @return nothing
 #' @export
-#' @include xlsx.background.R xlsx.sheetborder.R
+#' @include xl.background.R xl.sheetborder.R
 addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, topspace=3){
 
 

@@ -21,8 +21,7 @@ and 4 border cornet styles
 }
 \seealso{
 Other internal: \code{\link{borderStyles}},
-  \code{\link{xlsx.addTitle}},
-  \code{\link{xlsx.sheetborder}}
+  \code{\link{xl.addTitle}}, \code{\link{xl.sheetborder}}
 }
 \keyword{style}
 

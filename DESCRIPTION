@@ -13,11 +13,11 @@ Encoding: UTF-8
 LazyData: false
 RoxygenNote: 5.0.1
 Collate:
-    'xlsx.sheetborder.R'
-    'xlsx.background.R'
+    'xl.sheetborder.R'
+    'xl.background.R'
     'addDataSheet.R'
     'borderStyles.R'
-    'xlsx.addTitle.R'
+    'xl.addTitle.R'
     'setStyles.R'
     'createSE.R'
     'saveSE.R'

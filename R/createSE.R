@@ -5,8 +5,7 @@
 #' @param sheetList: named list, list(SheetName='Sheet title')
 #' @return named list of WB (workbook) and Sheets (named list of sheets)
 #' @return sheets: named list of registered sheets
-#' @include setStyles.R xlsx.background.R xlsx.addTitle.R
-#' @import xlsx
+#' @include setStyles.R xl.background.R xl.addTitle.R
 #' @export
 createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
 
