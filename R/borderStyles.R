@@ -7,25 +7,25 @@
 #'
 borderStyles <- function(wb){
 
-  top <- CellStyle(wb) + Border(color="black", position="TOP", pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
-  bottom <- CellStyle(wb) + Border(color="black", position="BOTTOM", pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
-  left <- CellStyle(wb) + Border(color="black", position="LEFT", pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
-  right <- CellStyle(wb) + Border(color="black", position="RIGHT", pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
+  top <- xslx::CellStyle(wb) + xslx::Border(color="black", position="TOP", pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
+  bottom <- xslx::CellStyle(wb) + xslx::Border(color="black", position="BOTTOM", pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
+  left <- xslx::CellStyle(wb) + xslx::Border(color="black", position="LEFT", pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
+  right <- xslx::CellStyle(wb) + xslx::Border(color="black", position="RIGHT", pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
 
-  ul_corner <-  CellStyle(wb) + Border(color="black", position=c("TOP", 'LEFT'), pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
-  ur_corner <-  CellStyle(wb) + Border(color="black", position=c("TOP", 'RIGHT'), pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
-  bl_corner <- CellStyle(wb) + Border(color="black", position=c("BOTTOM", 'LEFT'), pen="BORDER_THICK") +
-    Fill(foregroundColor='white');
-  br_corner <- CellStyle(wb) + Border(color="black", position=c("BOTTOM", 'RIGHT'), pen="BORDER_THICK")  +
-    Fill(foregroundColor='white');
+  ul_corner <-  xslx::CellStyle(wb) + xslx::Border(color="black", position=c("TOP", 'LEFT'), pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
+  ur_corner <-  xslx::CellStyle(wb) + xslx::Border(color="black", position=c("TOP", 'RIGHT'), pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
+  bl_corner <- xslx::CellStyle(wb) + xslx::Border(color="black", position=c("BOTTOM", 'LEFT'), pen="BORDER_THICK") +
+    xslx::Fill(foregroundColor='white');
+  br_corner <- CellStyle(wb) + xslx::Border(color="black", position=c("BOTTOM", 'RIGHT'), pen="BORDER_THICK")  +
+    xslx::Fill(foregroundColor='white');
 
-  shadow <-   CellStyle(wb) + Fill(foregroundColor='#969696');
+  shadow <-   xslx::CellStyle(wb) + xslx::Fill(foregroundColor='#969696');
 
 
   return(

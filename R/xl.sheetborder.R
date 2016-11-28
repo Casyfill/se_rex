@@ -6,7 +6,7 @@
 #' @param  colStart: integer, col for the upper left corner
 #' @keywords styler
 #' @family internal
-xlsx.sheetborder <- function(sheet, width, height, rowStart, colStart){
+xl.sheetborder <- function(sheet, width, height, rowStart, colStart){
 
 
   {

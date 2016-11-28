@@ -13,31 +13,31 @@ setStyles <- function(wb){
   font_size <- 18
   font_name <- "Source Sans Pro"
 
-  Background <-  CellStyle(wb) + Fill(foregroundColor='#f4f4f4');
+  Background <-  xslx::CellStyle(wb) + xslx::Fill(foregroundColor='#f4f4f4');
 
 
 
-  Header_Style <- CellStyle(wb) + Font(wb, heightInPoints=14,
+  Header_Style <- xslx::CellStyle(wb) + xslx::Font(wb, heightInPoints=14,
                                        name=font_name) +
-                  Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
-                  Border(color="black", position="BOTTOM", pen="BORDER_THIN") +
-                  Fill(foregroundColor='white');
+    xslx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
+    xslx::Border(color="black", position="BOTTOM", pen="BORDER_THIN") +
+    xslx::Fill(foregroundColor='white');
 
 
 
-  odd_row <-  CellStyle(wb) + Font(wb, heightInPoints=14, name = font_name) +
-              Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
-              Fill(foregroundColor='white');
+  odd_row <-  xslx::CellStyle(wb) + xslx::Font(wb, heightInPoints=14, name = font_name) +
+    xslx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
+    xslx::Fill(foregroundColor='white');
 
 
 
-  even_row <- CellStyle(wb) + Font(wb,  heightInPoints=14, name = font_name) +
-              Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
-              Fill(foregroundColor='#f4f4f4');
+  even_row <- xslx::CellStyle(wb) + xslx::Font(wb,  xslx::heightInPoints=14, name = font_name) +
+    xslx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
+    xslx::Fill(foregroundColor='#f4f4f4');
 
-  Title_Style <- CellStyle(wb) + Font(wb,  heightInPoints=18,
+  Title_Style <- xslx::CellStyle(wb) + xslx::Font(wb,  xslx::heightInPoints=18,
                                       name = font_name) +
-                               Fill(foregroundColor='#f4f4f4');
+    xslx::Fill(foregroundColor='#f4f4f4');
 
   borders <- borderStyles(wb)
 

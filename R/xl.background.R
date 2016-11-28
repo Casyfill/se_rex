@@ -3,13 +3,13 @@
 #' @param  background_style: xlsx style object
 #' @keywords styler
 #' @family internal
-xlsx.background <- function(sheet, background_style){
+xl.background <- function(sheet, background_style){
   #' create a background color fill
-  rows <- createRow(sheet,rowIndex=1:100)
-  cells <- createCell(rows, colIndex=1:100)
+  rows <- xslx::createRow(sheet,rowIndex=1:100)
+  cells <- xslx::createCell(rows, colIndex=1:100)
 
   wrap <- function(cell){
-    setCellStyle(cell, background_style)
+    xslx::setCellStyle(cell, background_style)
   }
 
   mydummy <- lapply(cells, wrap)

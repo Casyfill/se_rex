@@ -6,9 +6,9 @@
 #' @param  titleStyle: xlsx style format
 #' @keywords styler
 #' @family internal
-xlsx.addTitle<-function(sheet, rowIndex, colIndex, title, titleStyle){
-  rows <-getRows(sheet,rowIndex=rowIndex)
-  sheetTitle <-getCells(rows, colIndex=colIndex)
-  setCellValue(sheetTitle[[1]], title)
-  setCellStyle(sheetTitle[[1]], titleStyle)
+xl.addTitle<-function(sheet, rowIndex, colIndex, title, titleStyle){
+  rows <-xslx::getRows(sheet,rowIndex=rowIndex)
+  sheetTitle <-xslx::getCells(rows, colIndex=colIndex)
+  xslx::setCellValue(sheetTitle[[1]], title)
+  xslx::setCellStyle(sheetTitle[[1]], titleStyle)
 }
