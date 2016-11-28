@@ -1,6 +1,9 @@
 # se_rex
 se_excel r writer
 
+# INSTALLATION
+
+- `library(devtools); install_git("casyfill/se_rex");`
 
 
 # THE ROADMAP
@@ -17,10 +20,11 @@ se_excel r writer
 [x] Margins
 [x] and header
 [x] Shadow
-[/] Wrap into the package
+[x] Wrap into the package
 [ ] even and odd rows
+[ ] Reference
+[ ] Improve interface
 [ ] format style
 [ ] Infer Format
-[ ] Reference
 [ ] Matrix/Stack of Sheets
 [ ] Formulas?

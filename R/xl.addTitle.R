@@ -7,8 +7,8 @@
 #' @keywords styler
 #' @family internal
 xl.addTitle<-function(sheet, rowIndex, colIndex, title, titleStyle){
-  rows <-xslx::getRows(sheet,rowIndex=rowIndex)
-  sheetTitle <-xslx::getCells(rows, colIndex=colIndex)
+  rows <-xlsx::getRows(sheet,rowIndex=rowIndex)
+  sheetTitle <-xlsx::getCells(rows, colIndex=colIndex)
   xlsx::setCellValue(sheetTitle[[1]], title)
   xlsx::setCellStyle(sheetTitle[[1]], titleStyle)
 }
