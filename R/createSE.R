@@ -9,17 +9,17 @@
 #' @export
 createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
 
-  wb<<-xslx::createWorkbook(type="xlsx")
+  wb<<-xlsx::createWorkbook(type="xlsx")
   styles <<- setStyles(wb)
 
   logo_path <-  system.file(system.file("resources/SE_logo.png", package="serex"), package="serex")
   sheets = list()
   for(sheet.name in names(sheetlist)){
 
-    sheet <- xslx::createSheet(wb, sheetName = sheet.name)
+    sheet <- xlsx::createSheet(wb, sheetName = sheet.name)
     xl.background(sheet, styles[['background']])
 
-    xslx::addPicture(logo_path, sheet, startRow=2, startColumn=2 )
+    xlsx::addPicture(logo_path, sheet, startRow=2, startColumn=2 )
     xl.addTitle(sheet, 9, 2, sheetlist[[sheet.name]], styles[['title']] )
     sheets[[sheet.name]]= sheet
   }

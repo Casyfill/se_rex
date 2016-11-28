@@ -9,6 +9,6 @@
 xl.addTitle<-function(sheet, rowIndex, colIndex, title, titleStyle){
   rows <-xslx::getRows(sheet,rowIndex=rowIndex)
   sheetTitle <-xslx::getCells(rows, colIndex=colIndex)
-  xslx::setCellValue(sheetTitle[[1]], title)
-  xslx::setCellStyle(sheetTitle[[1]], titleStyle)
+  xlsx::setCellValue(sheetTitle[[1]], title)
+  xlsx::setCellStyle(sheetTitle[[1]], titleStyle)
 }

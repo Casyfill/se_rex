@@ -3,5 +3,5 @@
 #' @param path: string, path to the file
 #' @export
 saveSE <-function(wb, path){
-  saveWorkbook(wb, path)
+  xlsx::saveWorkbook(wb, path)
 }
