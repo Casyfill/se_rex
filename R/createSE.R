@@ -1,6 +1,5 @@
-#' creates new workbook, registers styles
-#' and adds given sheets
-#' NOTE: maybe should return wb only, then get sheets through getSheets()
+#' @description  creates new workbook, registers styles
+#' and adds given sheets NOTE: maybe should return wb only, then get sheets through getSheets()'
 #' @param sheetList: named list, list(SheetName='Sheet title')
 #' @return named list of WB (workbook) and Sheets (named list of sheets)
 #' @return sheets: named list of registered sheets
