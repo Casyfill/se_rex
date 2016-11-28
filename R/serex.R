@@ -1,20 +1,17 @@
-#!/usr/bin/Rscript --vanilla
-# SE_REX is a R to excel writer for Streeteasy,
-# A tiny wrapper that helps us to spend time on research, not formatting
-# Written by Philipp Kats, 2016_11_24
-
+#' creates new workbook, registers styles
+#' and adds given sheets
+#' NOTE: maybe should return wb only, then get sheets through getSheets()
+#' @param sheetList: named list, list(SheetName='Sheet title')
+#' @return named list of WB (workbook) and Sheets (named list of sheets)
+#' @return sheets: named list of registered sheets
+#' @include setStyles.R xlsx.background.R xlsx.addTitle.R
+#' @export
 createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
-  #' creates new workbook, registers styles
-  #' and adds given sheets
-  #' NOTE: maybe should return wb only, then get sheets through getSheets()
-  #' @param sheets: named list, list(SheetName='Sheet title')
-  #' @return named list of WB (workbook) and Sheets (named list of sheets)
-  #' @export
-  print(getwd())
-  wb<<-createWorkbook(type="xlsx")
-  styles <<- .setStyles(wb)
 
-  logo_path <-  system.file(file.path('resources', 'SE_logo.png'), package="serex")
+  wb<<-createWorkbook(type="xlsx")
+  styles <<- setStyles(wb)
+
+  logo_path <-  system.file('SE_logo.png', package="serex")
   sheets = list()
   for(sheet.name in names(sheetlist)){
 
@@ -28,63 +25,3 @@ createSE <- function(sheetlist=list(SUMMARY='Neighborhood inventory')){
 
   return(sheets)
 }
-
-
-addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, topspace=3){
-  #' writes a dataframe to the chosen sheet,
-  #' format it as a "datasheet"
-  #' @param x: dataframe to store
-  #' @param name: title of the datasheet to write
-  #' @param sheet: sheet object to write on
-  #' @param startRow: int, row for the upper left corner of the datasheet
-  #' @param startCol: int, column for the upper left corner of the datasheet
-  #' @param topspace: int, space between the top edge of the sheet and the header of the table
-  #' @return nothing
-  #' @export
-
-
-  dfshape <- c(nrow(df)+2+topspace, ncol(df)+1) # infer size of the sheet
-
-  # add dataframe
-  addDataFrame(x=df, sheet=sheet, startRow=(startRow+1+topspace),
-               startCol=(startCol+1), showNA=T, row.names = F,
-               characterNA="NA", # TODO: colStyle = NULL,  colSTYLE
-               colnamesStyle=styles[['table']][['header']])
-
-  # add sheet borders
-  xlsx.sheetborder(sheet=sheet, width=dfshape[2], height=dfshape[1], rowStart=startRow, colStart=startCol)
-
-  wrap_blank <- function(cell){
-    mydummy <- setCellStyle(cell, styles[['table']][['odd_row']])
-  }
-
-  rows <-getRows(sheet, rowIndex=(startRow+1):(startRow+topspace) )
-  cells <-getCells(rows, colIndex=(startCol+1):(startCol+dfshape[2]-1))
-  mydummy <- lapply(cells, wrap_blank)
-
-  cell <-getCells(getRows(sheet,rowIndex=(startRow+1)), colIndex=(startCol+1))
-  mydummy <-setCellValue(cell[[1]],name)
-
-}
-
-
-
-saveSE <-function(wb, path){
-  #' store SE workbook as an excel file
-  #' @param wb: workbook object to save
-  #' @param path: string, path to the file
-  #' @export
-  saveWorkbook(wb, path)
-}
-
-
-
-if (getOption('run.main', default=TRUE)){
-  library(datasets) # get example
-  sheetlist <- list(SUMMARY='Neighborhood inventory')
-  sheets <- createSE(sheetlist=sheetlist)
-  addDataSheet(cars, name='Cars Sample Dataset', sheets[['SUMMARY']], startRow=12, startCol=2, topspace=3)
-  saveSE(wb, 'test.xlsx')
-}
-
-

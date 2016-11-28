@@ -12,3 +12,13 @@ License: Not for public use
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 5.0.1
+Collate:
+    'xlsx.sheetborder.R'
+    'xlsx.background.R'
+    'addDataSheet.R'
+    'borderStyles.R'
+    'saveSE.R'
+    'xlsx.addTitle.R'
+    'setStyles.R'
+    'serex.R'
+    'zzz.R'

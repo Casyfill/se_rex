@@ -5,7 +5,7 @@
 #' @keywords style
 #' @family internal
 #' @return named list of styles
-#'
+#' @include borderStyles.R
 setStyles <- function(wb){
   #' register styles and return named list
   #' of them

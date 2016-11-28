@@ -9,10 +9,12 @@ NOTE: maybe should return wb only, then get sheets through getSheets()}
 createSE(sheetlist = list(SUMMARY = "Neighborhood inventory"))
 }
 \arguments{
-\item{sheets:}{named list, list(SheetName='Sheet title')}
+\item{sheetList:}{named list, list(SheetName='Sheet title')}
 }
 \value{
 named list of WB (workbook) and Sheets (named list of sheets)
+
+sheets: named list of registered sheets
 }
 \description{
 creates new workbook, registers styles
