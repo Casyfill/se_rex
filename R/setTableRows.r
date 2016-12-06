@@ -8,7 +8,7 @@
 #' @include setStyles.R
 setTableRows <- function(startRow, startCol, shape, sheet){
 
-  startRow <- startRow + 1 # account for header
+  startRow <- startRow # account for header
   height <- shape[[1]]
   width <- shape[[2]]
 

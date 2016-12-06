@@ -22,16 +22,14 @@ setStyles <- function(wb){
     xlsx::Border(color="black", position="BOTTOM", pen="BORDER_THIN") +
     xlsx::Fill(foregroundColor='white');
 
-
   odd_row <-  xlsx::CellStyle(wb) + xlsx::Font(wb, heightInPoints=14, name = font_name) +
     xlsx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
-    xlsx::Fill(foregroundColor='blue');
-
-
+    xlsx::Fill(foregroundColor='white');
 
   even_row <- xlsx::CellStyle(wb) + xlsx::Font(wb,  heightInPoints=14, name = font_name) +
     xlsx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
     xlsx::Fill(foregroundColor='#f4f4f4');
+
 
   Title_Style <- xlsx::CellStyle(wb) + xlsx::Font(wb,  heightInPoints=18,
                                       name = font_name) +
