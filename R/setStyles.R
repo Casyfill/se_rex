@@ -25,7 +25,7 @@ setStyles <- function(wb){
 
   odd_row <-  xlsx::CellStyle(wb) + xlsx::Font(wb, heightInPoints=14, name = font_name) +
     xlsx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
-    xlsx::Fill(foregroundColor='white');
+    xlsx::Fill(foregroundColor='blue');
 
 
 
