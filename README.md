@@ -4,7 +4,21 @@ se_excel r writer
 # INSTALLATION
 
 - `library(devtools); install_git("casyfill/se_rex");`
+```
+library(devtools); 
+install_git("https://github.com/Casyfill/se_rex.git");
+library(serex)
+```
+# USAGE
 
+```
+z <- data.frame(iris)
+
+sheets <- createSE() # create WB object and styles. sheets is the named list of sheets, obviously
+addDataSheet(z, name="The famous Iris",sheets[['SUMMARY']]) 
+saveSE(wb, "text.xlsx") # store xlsx 
+
+```
 
 # THE ROADMAP
 
