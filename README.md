@@ -3,7 +3,6 @@ se_excel r writer
 
 # INSTALLATION
 
-- `library(devtools); install_git("casyfill/se_rex");`
 ```
 library(devtools); 
 install_git("https://github.com/Casyfill/se_rex.git");
