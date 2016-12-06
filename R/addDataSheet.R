@@ -13,7 +13,7 @@ addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, t
 
 
   dfshape <- c(nrow(df)+2+topspace, ncol(df)+1) # infer size of the sheet
-  setTableRows(startRow=12, startCol=2, df.shape, sheet)
+  setTableRows(startRow=12, startCol=2, dim(df), sheet)
   # add dataframe
   addDataFrame(x=df, sheet=sheet, startRow=(startRow+1+topspace),
                startCol=(startCol+1), showNA=T, row.names = F,
@@ -21,7 +21,7 @@ addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, t
                colnamesStyle=styles[['table']][['header']])
 
   # add sheet borders
-  xlsx.sheetborder(sheet=sheet, width=dfshape[2], height=dfshape[1], rowStart=startRow, colStart=startCol)
+  xl.sheetborder(sheet=sheet, width=dfshape[2], height=dfshape[1], rowStart=startRow, colStart=startCol)
 
   wrap_blank <- function(cell){
     mydummy <- setCellStyle(cell, styles[['table']][['odd_row']])

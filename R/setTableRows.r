@@ -8,9 +8,9 @@
 #' @include setStyles.R
 setTableRows <- function(startRow, startCol, shape, sheet){
 
-
+shape <- dim(data.frame(iris))
   height <- shape[[1]]
-  wight <- shape[[2]]
+  width <- shape[[2]]
 
 
   # apply odd rows format

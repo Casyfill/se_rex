@@ -20,9 +20,9 @@ borderStyles <- function(wb){
     xlsx::Fill(foregroundColor='white');
   ur_corner <-  xlsx::CellStyle(wb) + xlsx::Border(color="black", position=c("TOP", 'RIGHT'), pen="BORDER_THICK") +
     xlsx::Fill(foregroundColor='white');
-  bl_corner <- xlsx::CellStyle(wb) + xlsx::Border(color="black", position=c("BOTTOM", 'LEFT'), pen="BORDER_THICK") +
+  bl_corner <-  xlsx::CellStyle(wb) + xlsx::Border(color="black", position=c("BOTTOM", 'LEFT'), pen="BORDER_THICK") +
     xlsx::Fill(foregroundColor='white');
-  br_corner <- CellStyle(wb) + xlsx::Border(color="black", position=c("BOTTOM", 'RIGHT'), pen="BORDER_THICK")  +
+  br_corner <-  xlsx::CellStyle(wb) + xlsx::Border(color="black", position=c("BOTTOM", 'RIGHT'), pen="BORDER_THICK") +
     xlsx::Fill(foregroundColor='white');
 
   shadow <-   xlsx::CellStyle(wb) + xlsx::Fill(foregroundColor='#969696');
