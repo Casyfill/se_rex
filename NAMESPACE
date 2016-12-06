@@ -3,3 +3,4 @@
 export(addDataSheet)
 export(createSE)
 export(saveSE)
+export(setTableRows)

@@ -8,13 +8,12 @@
 #' @param topspace: int, space between the top edge of the sheet and the header of the table
 #' @return nothing
 #' @export
-#' @include xl.background.R xl.sheetborder.R
+#' @include xl.background.R xl.sheetborder.R setTableRows.r
 addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, topspace=3){
 
 
-
   dfshape <- c(nrow(df)+2+topspace, ncol(df)+1) # infer size of the sheet
-
+  setTableRows(startRow=12, startCol=2, df.shape, sheet)
   # add dataframe
   addDataFrame(x=df, sheet=sheet, startRow=(startRow+1+topspace),
                startCol=(startCol+1), showNA=T, row.names = F,
