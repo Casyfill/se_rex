@@ -16,13 +16,11 @@ setStyles <- function(wb){
   Background <-  xlsx::CellStyle(wb) + xlsx::Fill(foregroundColor='#f4f4f4');
 
 
-
   Header_Style <- xlsx::CellStyle(wb) + xlsx::Font(wb, heightInPoints=14,
                                        name=font_name) +
     xlsx::Alignment(wrapText=TRUE, horizontal="ALIGN_RIGHT") +
     xlsx::Border(color="black", position="BOTTOM", pen="BORDER_THIN") +
     xlsx::Fill(foregroundColor='white');
-
 
 
   odd_row <-  xlsx::CellStyle(wb) + xlsx::Font(wb, heightInPoints=14, name = font_name) +
