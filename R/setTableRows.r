@@ -8,22 +8,21 @@
 #' @include setStyles.R
 setTableRows <- function(startRow, startCol, shape, sheet){
 
-  rowStart <- start_pos[[1]]
-  colStart <- start_pos[[2]]
+
   height <- shape[[1]]
   wight <- shape[[2]]
 
 
   # apply odd rows format
-  rows <-xlsx::getRows(sheet,rowIndex= rowStart:(rowStart+height-1))
-  cells <-xlsx::getCells(rows, colIndex=colStart:(colStart + width - 1))
+  rows <-xlsx::getRows(sheet,rowIndex= startRow:(startRow+height-1))
+  cells <-xlsx::getCells(rows, colIndex=startCol:(startCol + width - 1))
   mydummy <- lapply(cells, function(cell){mydummy <- xlsx::setCellStyle(cell, styles[['table']][['odd_row']])})
 
-  rowStart <- 5
+  startRow <- 5
   height <- 12
-  for(i in seq.int( (rowStart+1), (rowStart+floor(height/2)*2) , by=2)){
+  for(i in seq.int( (startRow+1), (startRow+floor(height/2)*2) , by=2)){
     rows <-xlsx::getRows(sheet,rowIndex=i)
-    cells <-xlsx::getCells(rows, colIndex=colStart:(colStart + width - 1))
+    cells <-xlsx::getCells(rows, colIndex=startCol:(startCol + width - 1))
     mydummy <- lapply(cells, function(cell){mydummy <- xlsx::setCellStyle(cell, styles[['table']][['even_row']])})
   }
 
