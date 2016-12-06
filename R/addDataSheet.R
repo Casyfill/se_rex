@@ -20,7 +20,7 @@ addDataSheet <- function(df, name='DataSheet', sheet, startRow=12, startCol=2, t
                characterNA="NA", # TODO: colStyle = NULL,  colSTYLE
                colnamesStyle=styles[['table']][['header']])
 
-  setTableRows(startRow=12, startCol=2, dim(df), sheet)
+  setTableRows(startRow=startRow=(startRow+topspace+2), startCol=(startCol+1), dim(df), sheet)
   # add sheet borders
   xl.sheetborder(sheet=sheet, width=dfshape[2], height=dfshape[1], rowStart=startRow, colStart=startCol)
 
