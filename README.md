@@ -41,4 +41,4 @@ saveSE(wb, "text.xlsx") # store xlsx
 - [ ] format style
 - [ ] Infer Format
 - [ ] Matrix/Stack of Sheets
-- [ ] Formulas?
+- [ ] Formulas? Formulas !!!
