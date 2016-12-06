@@ -62,10 +62,10 @@ xl.sheetborder <- function(sheet, width, height, rowStart, colStart){
     mydummy <-xlsx::setCellStyle(cell[[1]], styles[['borders']][['ur_corner']])
 
     cell <-xlsx::getCells(getRows(sheet, rowIndex=(rowStart+height)), colIndex=colStart)
-    mydummy <-xlsx::setCellStyle(cell[[1]], styles[['borders']][['ul_corner']])
+    mydummy <-xlsx::setCellStyle(cell[[1]], styles[['borders']][['bl_corner']])
 
     cell <-xlsx::getCells(getRows(sheet, rowIndex=(rowStart+height)), colIndex=(colStart+width))
-    mydummy <-xlsx::setCellStyle(cell[[1]], styles[['borders']][['ur_corner']])
+    mydummy <-xlsx::setCellStyle(cell[[1]], styles[['borders']][['br_corner']])
   }
 
   { #shadow
