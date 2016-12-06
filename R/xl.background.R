@@ -5,7 +5,7 @@
 #' @family internal
 xl.background <- function(sheet, background_style){
   #' create a background color fill
-  rows <- xlsx::createRow(sheet,rowIndex=1:1000)
+  rows <- xlsx::createRow(sheet,rowIndex=1:200)
   cells <- xlsx::createCell(rows, colIndex=1:200)
 
   wrap <- function(cell){
